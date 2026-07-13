@@ -1,0 +1,13 @@
+{
+  "name": "obitos2026",
+  "version": "1.0.0",
+  "description": "PAINEL DE ÓBITOS AP 5.3 — Coordenação Área Programática 5.3",
+  "scripts": {
+    "dev": "serve . -l 3000 --no-clipboard",
+    "start": "serve . -l 3000 --no-clipboard",
+    "open": "start http://localhost:3000/apresentacao-obitos-2026.html"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

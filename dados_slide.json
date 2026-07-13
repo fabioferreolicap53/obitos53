@@ -1,0 +1,163 @@
+{
+  "materno": {
+    "total": 3,
+    "bairros": {
+      "SANTA CRUZ": 3
+    },
+    "locais": {
+      "HMPII": 1,
+      "DOMICILIO": 1,
+      "HUPE": 1
+    },
+    "sexo": {
+      "Feminino": 3
+    },
+    "idade": {},
+    "refs": {
+      "CMS CESÁRIO DE MELLO": 1,
+      "CMS DECIO DO AMARAL": 1,
+      "CF SERGIO AROUCA": 1
+    },
+    "cids": {
+      "J189": 1,
+      "I249": 1,
+      "N179": 1
+    },
+    "peso": {}
+  },
+  "fetal": {
+    "total": 22,
+    "bairros": {
+      "SANTA CRUZ": 14,
+      "PACIENCIA": 5,
+      "SEPETIBA": 3
+    },
+    "locais": {
+      "SMS HOSPITAL MUNICIPAL PEDRO II": 16,
+      "SMS HOSPITAL MUNICIPAL ROCHA FARIA AP 52": 2,
+      "HOSPITAL OESTE DOR": 1,
+      "CLINIPAM CLINICA PARANAENSE DE ASSISTENCIA MEDICA": 1,
+      "SMS HOSPITAL MUNICIPAL ALBERT SCHWEITZER AP 51": 1,
+      "IFF - INSTITUTO FERNDANDES FIGUEIRA": 1
+    },
+    "sexo": {
+      "Masculino": 11,
+      "Feminino": 9,
+      "Não informado": 2
+    },
+    "idade": {
+      "media": 24.9,
+      "min": 15,
+      "max": 38,
+      "faixas": {
+        "Adolescente <20": 3,
+        "Adulto 20-34": 14,
+        "35+": 3
+      }
+    },
+    "refs": {
+      "CF JAMIL HADADD": 4,
+      "CF LENICE MARIA MONTEIRO": 3,
+      "CMS ADELINO SIMÕES": 3,
+      "CMS CESARIO DE MELLO": 2,
+      "CF SERGIO AROUCA": 2,
+      "CF VALERIA GOMES": 1,
+      "CMS DECIO DO AMARAL": 1,
+      "CMS EMYDIO CABRAL": 1,
+      "CMS ALOYSIO AMANCIO": 1,
+      "CMS CYRO DE MELLO": 1,
+      "CF EDSON ABDALLA": 1,
+      "CMS SAVIO ANTUNES": 1,
+      "CF DEOLINDO COUTO": 1
+    },
+    "cids": {
+      "P209": 6,
+      "P000": 4,
+      "P021": 4,
+      "A502": 2,
+      "P201": 1,
+      "P700": 1,
+      "P027": 1,
+      "P95": 1,
+      "P003": 1,
+      "Q913": 1
+    },
+    "peso": {
+      "media": 1621.0,
+      "min": 175,
+      "max": 3455
+    }
+  },
+  "infantil": {
+    "total": 37,
+    "bairros": {
+      "SANTA CRUZ": 21,
+      "SEPETIBA": 11,
+      "PACIENCIA": 5
+    },
+    "locais": {
+      "SMS HOSPITAL MUNICIPAL PEDRO II": 20,
+      "SMS HOSPITAL MUNICIPAL ROCHA FARIA AP 52": 9,
+      "LLAK MEDICINA NEONATAL BANGU": 1,
+      "MS HOSPITAL FEDERAL DA LAGOA": 1,
+      "IPANEMA SERV DE ASSIST MED CIR INF": 1,
+      "HOSPITAL MUNICIPAL JESUS": 1,
+      "IFF": 1,
+      "HOSPITAL CENTRAL DA AERONAUTICA": 1,
+      "SMS HOSPITAL MATERNIDADE CARMELA DUTRA AP 32": 1,
+      "INSTITUTO FERNANDES FIGUEIRA": 1
+    },
+    "sexo": {
+      "Masculino": 21,
+      "Feminino": 16
+    },
+    "idade": {
+      "media": 26.7,
+      "min": 15,
+      "max": 44,
+      "faixas": {
+        "Adolescente <20": 7,
+        "Adulto 20-34": 22,
+        "35+": 7
+      }
+    },
+    "refs": {
+      "CMS CESARIO DE MELO": 5,
+      "CF WALDEMAR BERADINELLI": 4,
+      "CF VALERIA GOMES": 4,
+      "CF ALICE DE JESUS": 3,
+      "CF JOAO BATISTA CHAGAS": 2,
+      "CMS ADELINO SIMÕES": 2,
+      "CF SERGIO AROUCA": 2,
+      "CF LENICE MARIA MONTEIRO": 2,
+      "CMS DECIO DO AMARAL": 2,
+      "CF WALDEMAR BERARDINELLI": 2,
+      "CF ERNANI BRAGA": 2,
+      "CMS EMYDIO CABRAL": 1,
+      "CMS ALOYSIO AMANCIO": 1,
+      "CMS FLORIPES GALDINO": 1,
+      "CF EDSON ABDALLA": 1,
+      "CF DEOLINDO COUTO": 1,
+      "CF SAMUEL PENHA VALE": 1,
+      "CF ILZO MOTTA": 1
+    },
+    "cids": {
+      "P369": 3,
+      "P000": 3,
+      "Q899": 2,
+      "Q999": 1,
+      "P021": 1,
+      "Q269": 1,
+      "Q249": 1,
+      "P072": 1,
+      "P220": 1,
+      "P010": 1,
+      "J210": 1
+    },
+    "peso": {
+      "media": 1643.0,
+      "min": 355,
+      "max": 3810
+    }
+  }
+}
