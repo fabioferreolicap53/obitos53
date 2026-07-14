@@ -2,10 +2,159 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=/apresentacao-obitos-2026.html">
-  <title>Redirecionando...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAINEL DE ÓBITOS AP 5.3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            dark: { 900: '#060918', 800: '#0a0e27', 700: '#111638', 600: '#1a2048' },
+            brand: { blue: '#3b82f6', coral: '#f97066', green: '#22c55e', purple: '#a78bfa', amber: '#eab308' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #060918; }
+    .glass { background: rgba(15,20,50,.65); backdrop-filter: blur(20px); border: 1px solid rgba(99,102,241,.12); }
+    .glass-hover:hover { border-color: rgba(99,102,241,.35); box-shadow: 0 8px 40px rgba(59,130,246,.12); transform: translateY(-2px); }
+    .glow-blue { box-shadow: 0 0 60px rgba(59,130,246,.08); }
+    .gradient-text { background: linear-gradient(135deg, #60a5fa, #a78bfa, #f97066); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .stat-card { background: rgba(15,20,50,.5); border: 1px solid rgba(99,102,241,.08); }
+    .btn-primary { background: linear-gradient(135deg, #3b82f6, #6366f1); transition: all .3s ease; }
+    .btn-primary:hover { box-shadow: 0 8px 30px rgba(59,130,246,.3); transform: translateY(-1px); }
+    .btn-outline { border: 1px solid rgba(99,102,241,.25); background: rgba(15,20,50,.4); transition: all .3s ease; }
+    .btn-outline:hover { border-color: rgba(99,102,241,.5); background: rgba(30,41,82,.5); }
+    .pulse-ring { animation: pulse-ring 2.5s ease-in-out infinite; }
+    @keyframes pulse-ring { 0%,100% { opacity:.4; transform:scale(1); } 50% { opacity:.8; transform:scale(1.05); } }
+    .fade-in { animation: fadeIn .8s ease-out; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  </style>
 </head>
-<body>
-  <p>Redirecionando para <a href="/apresentacao-obitos-2026.html">apresentacao-obitos-2026.html</a>...</p>
+<body class="min-h-screen text-slate-300 overflow-x-hidden">
+
+  <!-- Background Effects -->
+  <div class="fixed inset-0 pointer-events-none">
+    <div class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-blue-600/5 blur-[120px]"></div>
+    <div class="absolute bottom-[-15%] right-[-5%] w-[500px] h-[500px] rounded-full bg-purple-600/5 blur-[100px]"></div>
+    <div class="absolute top-[40%] left-[50%] w-[400px] h-[400px] rounded-full bg-coral/3 blur-[80px]"></div>
+  </div>
+
+  <div class="relative z-10 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="px-6 py-5 flex items-center justify-between border-b border-slate-800/50">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <span class="text-sm font-semibold text-slate-400 tracking-wide uppercase">AP 5.3 — Painel de Indicadores</span>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-slate-500">
+        <span class="w-2 h-2 rounded-full bg-green-500 pulse-ring"></span>
+        Dados atualizados — 2026
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex items-center justify-center px-6 py-12">
+      <div class="max-w-4xl w-full text-center fade-in">
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-8 text-xs font-medium text-blue-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+          Coordenação Área Programática 5.3 — Paraíba
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4">
+          <span class="text-white">Painel de</span><br>
+          <span class="gradient-text">Óbitos Materno, Fetal e Infantil</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-base md:text-lg text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+          Análise integrada dos óbitos na Área Programática 5.3 — dados de residência 2026.
+          Visualização interativa com indicadores por tipo, componente etário, causas e recomendações.
+        </p>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto mb-12">
+          <div class="stat-card rounded-xl p-4 text-center">
+            <div class="text-2xl font-black text-white">62</div>
+            <div class="text-xs text-slate-500 mt-1 font-medium">Óbitos Totais</div>
+          </div>
+          <div class="stat-card rounded-xl p-4 text-center">
+            <div class="text-2xl font-black text-blue-400">3</div>
+            <div class="text-xs text-slate-500 mt-1 font-medium">Tipos Analisados</div>
+          </div>
+          <div class="stat-card rounded-xl p-4 text-center">
+            <div class="text-2xl font-black text-purple-400">14</div>
+            <div class="text-xs text-slate-500 mt-1 font-medium">Slides de Análise</div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+          <!-- Apresentação com Autoplay -->
+          <a href="/apresentacao-obitos-2026.html?autoplay=1" class="btn-primary group flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold text-sm no-underline">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Apresentação com Autoplay
+            <span class="text-xs text-blue-200/60 font-normal">12s/slide</span>
+          </a>
+
+          <!-- Apresentação Manual -->
+          <a href="/apresentacao-obitos-2026.html" class="btn-outline group flex items-center gap-3 px-8 py-4 rounded-xl text-slate-300 font-semibold text-sm no-underline">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+            </svg>
+            Apresentação Manual
+          </a>
+
+          <!-- Relatório A4 -->
+          <button onclick="printReport()" class="btn-outline group flex items-center gap-3 px-8 py-4 rounded-xl text-slate-300 font-semibold text-sm cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+            </svg>
+            Relatório A4
+            <span class="text-xs text-slate-500 font-normal">Imprimir</span>
+          </button>
+
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="px-6 py-4 border-t border-slate-800/50 text-center text-xs text-slate-600">
+      Área Programática 5.3 — Paraíba | Dados: SINASC / SIM / SIH 2026 | Atualizado: Julho 2026
+    </footer>
+
+  </div>
+
+  <script>
+    function printReport() {
+      const w = window.open('/apresentacao-obitos-2026.html?print=1', '_blank');
+      if (w) {
+        w.onload = function() {
+          setTimeout(function() { w.print(); }, 1500);
+        };
+      }
+    }
+  </script>
+
 </body>
 </html>

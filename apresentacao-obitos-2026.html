@@ -481,18 +481,30 @@
     <div>
       <div id="chart-componente" class="chart-box-lg"></div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:14px;justify-content:center;">
+    <div style="display:flex;flex-direction:column;gap:12px;justify-content:center;">
       <div class="card" style="border-left:3px solid #3b82f6;padding:14px 16px;">
-        <div style="font-weight:700;color:#60a5fa;margin-bottom:4px;">Neo Precoce — 54%</div>
-        <div style="font-size:0.82em;color:#94a3b8;">0–6 dias de vida. Mortalidade associada a prematuridade, asfixxia e malformações congênitas.</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <div style="font-weight:700;color:#60a5fa;">Neo Precoce — 54%</div>
+          <span style="font-size:0.65em;background:rgba(59,130,246,.15);color:#60a5fa;padding:2px 8px;border-radius:10px;font-weight:600;">0–6 dias</span>
+        </div>
+        <div style="font-size:0.82em;color:#94a3b8;">Mais da metade dos óbitos infantis ocorre na primeira semana de vida, com pico nas primeiras 24 horas. As principais causas são <strong style="color:#cbd5e1;">prematuridade</strong> (nascimento antes de 37 semanas), <strong style="color:#cbd5e1;">asfixxia perinatal</strong> (sofrimento fetal durante o parto) e <strong style="color:#cbd5e1;">malformações congênitas</strong>. Esse padrão reflete deficiências na assistência pré-natal e na qualificação do parto.</div>
+        <div style="font-size:0.78em;color:#60a5fa;margin-top:6px;font-weight:600;">→ Prioridade: capacitar equipes para parto de alto risco e garantir pré-natal qualificado com busca ativa de gestantes.</div>
       </div>
       <div class="card card-pink" style="border-left:3px solid #f97066;padding:14px 16px;">
-        <div style="font-weight:700;color:#f97066;margin-bottom:4px;">Neo Tardio — 24%</div>
-        <div style="font-size:0.82em;color:#94a3b8;">7–27 dias. Destaque para infecções neonatais e complicações pós-parto.</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <div style="font-weight:700;color:#f97066;">Neo Tardio — 24%</div>
+          <span style="font-size:0.65em;background:rgba(249,112,102,.15);color:#f97066;padding:2px 8px;border-radius:10px;font-weight:600;">7–27 dias</span>
+        </div>
+        <div style="font-size:0.82em;color:#94a3b8;">Nessa fase, o recém-nascido já deixou o ambiente hospitalar e passa a depender do cuidado domiciliar. As mortes são causadas por <strong style="color:#cbd5e1;">infecções hospitalares adquiridas durante a internação</strong> (sepse, pneumonias) e <strong style="color:#cbd5e1;">complicações não detectadas na alta</strong>. Indica falha no seguimento pós-natal.</div>
+        <div style="font-size:0.78em;color:#f97066;margin-top:6px;font-weight:600;">→ Prioridade: implementar retorno obrigatório entre 7–14 dias e capacitar agentes comunitários para visita domiciliar ao recém-nascido.</div>
       </div>
       <div class="card card-green" style="border-left:3px solid #22c55e;padding:14px 16px;">
-        <div style="font-weight:700;color:#22c55e;margin-bottom:4px;">Pós-Neonatal — 22%</div>
-        <div style="font-size:0.82em;color:#94a3b8;">28 dias – 1 ano. Causas infecciosas, respiratórias e condições socioeconômicas.</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <div style="font-weight:700;color:#22c55e;">Pós-Neonatal — 22%</div>
+          <span style="font-size:0.65em;background:rgba(34,197,94,.15);color:#22c55e;padding:2px 8px;border-radius:10px;font-weight:600;">28d – 1 ano</span>
+        </div>
+        <div style="font-size:0.82em;color:#94a3b8;">Óbitos nessa faixa estão ligados a causas externas ao ambiente hospitalar: <strong style="color:#cbd5e1;">pneumonia</strong>, <strong style="color:#cbd5e1;">diarreia</strong> e <strong style="color:#cbd5e1;">desnutrição</strong>. Refletem condições socioeconômicas, acesso precário a saúde e baixa adesão a vacinação. Morte evitável com ações básicas de saúde pública.</div>
+        <div style="font-size:0.78em;color:#22c55e;margin-top:6px;font-weight:600;">→ Prioridade: fortalecer Programa Saúde da Família, promover aleitamento materno exclusivo até 6 meses e garantir calendário vacinal completo.</div>
       </div>
     </div>
   </div>
@@ -782,7 +794,7 @@
     <div class="rec-card">
       <div class="rec-num" style="background:#8b5cf6;">07</div>
       <div class="rec-text">
-        <strong>40% mães fetais c/ 4–7 anos estudo</strong>. 19% mães <20 anos. <strong>Vulnerabilidade social</strong> = fator de risco independente.
+        <strong>40% mães fetais c/ 4–7 anos de estudo</strong>. 19% mães <20 anos. <strong>Vulnerabilidade social</strong> = fator de risco independente.
       </div>
     </div>
 
@@ -869,6 +881,53 @@ document.addEventListener('DOMContentLoaded', function() {
       toggleAutoAdvance();
     }
   });
+
+  // ==================== URL PARAMS: AUTOPLAY + PRINT ====================
+  const urlParams = new URLSearchParams(window.location.search);
+
+  // Autoplay: ?autoplay=1
+  if (urlParams.get('autoplay') === '1') {
+    startAutoAdvance();
+    autoPaused = false;
+    autoDot.classList.remove('paused');
+    autoText.textContent = 'Auto: 12s';
+  }
+
+  // Print mode: ?print=1 → inject A4 print styles
+  if (urlParams.get('print') === '1') {
+    const printStyle = document.createElement('style');
+    printStyle.textContent = `
+      @media print {
+        @page { size: A4 portrait; margin: 15mm; }
+        body { background: #fff !important; color: #111 !important; }
+        .reveal { background: #fff !important; }
+        .reveal .slides { transform: none !important; }
+        .reveal .slides section { display: block !important; page-break-after: always; min-height: auto; padding: 20px 0; }
+        .reveal .slides section:last-child { page-break-after: avoid; }
+        .reveal .slide-background { background: #fff !important; }
+        #auto-indicator, .reveal .controls, .reveal .progress, .reveal .slide-number { display: none !important; }
+        .card, .stat-mini, .rec-card { border: 1px solid #ddd !important; background: #f9f9f9 !important; }
+        h1, h2, h3 { color: #111 !important; -webkit-text-fill-color: #111 !important; }
+        p, span, div { color: #333 !important; }
+        .gradient-text { background: none !important; -webkit-text-fill-color: #1a1a2e !important; }
+        .section-header { border-bottom: 2px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 16px; }
+        .grid-2 { display: block !important; }
+        .grid-2 > div { margin-bottom: 16px; }
+        .chart-box-lg, .chart-box-sm { min-height: 200px !important; border: 1px solid #ddd; background: #fafafa !important; }
+        .divider { border-color: #ccc !important; }
+      }
+    `;
+    document.head.appendChild(printStyle);
+
+    // Show all slides for print
+    Reveal.on('ready', () => {
+      Reveal.slide(0);
+      const sections = document.querySelectorAll('.reveal .slides section');
+      sections.forEach(s => { s.style.display = 'block'; s.style.pageBreakAfter = 'always'; });
+      document.querySelector('.reveal .slides').style.display = 'block';
+      document.querySelector('.reveal .slides').style.flexDirection = 'column';
+    });
+  }
 
   // ==================== APEXCHARTS GLOBAL THEME ====================
   const APEX_THEME = {
@@ -1416,7 +1475,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Handle resize
   window.addEventListener('resize', () => {
-    Object.values(chartInstances).forEach(c => { if (c && !c.isDestroyed()) c.resize(); });
+    Object.values(chartInstances).forEach(c => { if (c && typeof c.resize === 'function') c.resize(); });
   });
 });
 </script>
