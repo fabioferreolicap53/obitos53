@@ -352,47 +352,76 @@
 <!-- ===================== SLIDE 2 — MAPA DE CALOR POR BAIRRO ===================== -->
 <section data-transition="slide">
   <div class="section-header">
-    <div class="icon-box"><i data-lucide="map-pin"></i></div>
+    <div class="icon-box" style="background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2);">
+      <svg width="18" height="18" fill="none" stroke="#60a5fa" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+    </div>
     <div>
       <h2 style="margin:0;">Comparativo por Bairro de Residência</h2>
-      <p style="font-size:0.7em;color:#64748b;margin:2px 0 0;">Fetal × Infantil × Materno por região</p>
+      <p style="font-size:0.68em;color:#64748b;margin:2px 0 0;">Distribuição dos 62 óbitos — Fetal × Infantil × Materno</p>
     </div>
   </div>
   <hr class="divider">
-  <div style="display:grid;grid-template-columns:1fr 140px;gap:10px;align-items:start;">
-    <div id="chart-bairros" class="chart-box-lg" style="min-height:180px;"></div>
-    <div style="display:flex;flex-direction:column;gap:6px;">
-      <div style="padding:8px 10px;border-radius:8px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);">
-        <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px;">
-          <svg width="12" height="12" fill="none" stroke="#60a5fa" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M7 21v-2a5 5 0 0110 0v2"/></svg>
+  <div style="display:grid;grid-template-columns:1fr 170px;gap:10px;align-items:start;">
+    <!-- Gráfico -->
+    <div id="chart-bairros" class="chart-box-lg" style="min-height:200px;"></div>
+    <!-- Painel lateral -->
+    <div style="display:flex;flex-direction:column;gap:5px;">
+      <!-- Santa Cruz -->
+      <div style="padding:7px 9px;border-radius:8px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.15);">
+        <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px;">
+          <svg width="12" height="12" fill="none" stroke="#60a5fa" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
           <span style="font-size:0.65em;font-weight:700;color:#60a5fa;">Santa Cruz</span>
+          <span style="margin-left:auto;font-size:0.55em;background:rgba(59,130,246,.15);color:#60a5fa;padding:1px 5px;border-radius:6px;">#1</span>
         </div>
-        <div style="font-size:1.1em;font-weight:900;color:#fff;">38</div>
-        <div style="font-size:0.55em;color:#64748b;">61% do total</div>
+        <div style="font-size:1.1em;font-weight:900;color:#fff;">38 <span style="font-size:0.5em;color:#64748b;font-weight:500;">61%</span></div>
+        <div style="display:flex;gap:3px;margin-top:3px;">
+          <span style="font-size:0.52em;background:rgba(59,130,246,.12);color:#60a5fa;padding:1px 4px;border-radius:4px;">F:24</span>
+          <span style="font-size:0.52em;background:rgba(249,112,102,.12);color:#f97066;padding:1px 4px;border-radius:4px;">I:21</span>
+          <span style="font-size:0.52em;background:rgba(34,197,94,.12);color:#22c55e;padding:1px 4px;border-radius:4px;">M:1</span>
+        </div>
       </div>
-      <div style="padding:8px 10px;border-radius:8px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.12);">
-        <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px;">
-          <svg width="12" height="12" fill="none" stroke="#22c55e" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      <!-- Sepetiba -->
+      <div style="padding:7px 9px;border-radius:8px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);">
+        <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px;">
+          <svg width="12" height="12" fill="none" stroke="#22c55e" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
           <span style="font-size:0.65em;font-weight:700;color:#22c55e;">Sepetiba</span>
+          <span style="margin-left:auto;font-size:0.55em;background:rgba(34,197,94,.15);color:#22c55e;padding:1px 5px;border-radius:6px;">#2</span>
         </div>
-        <div style="font-size:1.1em;font-weight:900;color:#fff;">14</div>
-        <div style="font-size:0.55em;color:#64748b;">23% — 1 UTI</div>
+        <div style="font-size:1.1em;font-weight:900;color:#fff;">14 <span style="font-size:0.5em;color:#64748b;font-weight:500;">23%</span></div>
+        <div style="display:flex;gap:3px;margin-top:3px;">
+          <span style="font-size:0.52em;background:rgba(59,130,246,.12);color:#60a5fa;padding:1px 4px;border-radius:4px;">F:4</span>
+          <span style="font-size:0.52em;background:rgba(249,112,102,.12);color:#f97066;padding:1px 4px;border-radius:4px;">I:11</span>
+          <span style="font-size:0.52em;background:rgba(34,197,94,.12);color:#22c55e;padding:1px 4px;border-radius:4px;">M:0</span>
+        </div>
+        <div style="font-size:0.5em;color:#94a3b8;margin-top:2px;">1 UTI neonatal disponível</div>
       </div>
-      <div style="padding:8px 10px;border-radius:8px;background:rgba(249,112,102,.06);border:1px solid rgba(249,112,102,.12);">
-        <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px;">
-          <svg width="12" height="12" fill="none" stroke="#f97066" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      <!-- Paciência -->
+      <div style="padding:7px 9px;border-radius:8px;background:rgba(249,112,102,.06);border:1px solid rgba(249,112,102,.15);">
+        <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px;">
+          <svg width="12" height="12" fill="none" stroke="#f97066" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
           <span style="font-size:0.65em;font-weight:700;color:#f97066;">Paciência</span>
+          <span style="margin-left:auto;font-size:0.55em;background:rgba(249,112,102,.15);color:#f97066;padding:1px 5px;border-radius:6px;">#3</span>
         </div>
-        <div style="font-size:1.1em;font-weight:900;color:#fff;">10</div>
-        <div style="font-size:0.55em;color:#64748b;">16% — sub-registro</div>
+        <div style="font-size:1.1em;font-weight:900;color:#fff;">10 <span style="font-size:0.5em;color:#64748b;font-weight:500;">16%</span></div>
+        <div style="display:flex;gap:3px;margin-top:3px;">
+          <span style="font-size:0.52em;background:rgba(59,130,246,.12);color:#60a5fa;padding:1px 4px;border-radius:4px;">F:5</span>
+          <span style="font-size:0.52em;background:rgba(249,112,102,.12);color:#f97066;padding:1px 4px;border-radius:4px;">I:5</span>
+          <span style="font-size:0.52em;background:rgba(34,197,94,.12);color:#22c55e;padding:1px 4px;border-radius:4px;">M:0</span>
+        </div>
+        <div style="font-size:0.5em;color:#f97066;margin-top:2px;">Sub-registro detectado</div>
       </div>
     </div>
   </div>
-  <div class="finding-box" style="font-size:0.7em;line-height:1.35;padding:6px 10px;margin-top:6px;">
-    <svg width="12" height="12" fill="none" stroke="#60a5fa" stroke-width="2" viewBox="0 0 24 24" style="display:inline;vertical-align:middle;margin-right:3px;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-    <strong style="color:#60a5fa;">Santa Cruz</strong> 62% fetais, 57% infantis.
-    <strong style="color:#f97066;">Paciência</strong>: 23% fetais vs 13% infantis.
-    <strong style="color:#22c55e;">Sepetiba</strong>: 30% infantis, 1 UTI.
+  <!-- Finding boxes -->
+  <div style="display:flex;gap:6px;margin-top:6px;">
+    <div class="finding-box" style="flex:1;font-size:0.65em;line-height:1.3;padding:5px 8px;">
+      <svg width="11" height="11" fill="none" stroke="#60a5fa" stroke-width="2" viewBox="0 0 24 24" style="display:inline;vertical-align:middle;margin-right:2px;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <strong style="color:#60a5fa;">Santa Cruz:</strong> polo dominante com 61% dos óbitos. Maior concentração populacional da AP 5.3.
+    </div>
+    <div class="finding-box" style="flex:1;font-size:0.65em;line-height:1.3;padding:5px 8px;">
+      <svg width="11" height="11" fill="none" stroke="#f97066" stroke-width="2" viewBox="0 0 24 24" style="display:inline;vertical-align:middle;margin-right:2px;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      <strong style="color:#f97066;">Paciência:</strong> desproporção fetal/infantil indica falha no encaminhamento pós-natal.
+    </div>
   </div>
 </section>
 
