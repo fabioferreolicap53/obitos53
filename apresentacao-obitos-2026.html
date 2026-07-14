@@ -20,7 +20,7 @@
     --green: #22c55e;
     --purple: #a78bfa;
     --amber: #eab308;
-    --bg-dark: #0a0e27;
+    --bg-dark: #0b1a3b;
   }
   *, *::before, *::after { box-sizing: border-box; }
   body, .reveal {
@@ -834,8 +834,14 @@ document.addEventListener('DOMContentLoaded', function() {
   lucide.createIcons();
 
   // ==================== REVEAL.JS INIT ====================
+  // Force start from first slide
+  if (!window.location.hash || window.location.hash === '#/') {
+    history.replaceState(null, null, window.location.pathname + window.location.search);
+  }
+
   Reveal.initialize({
-    hash: true,
+    hash: false,
+    startSlide: 0,
     transition: 'slide',
     transitionSpeed: 'default',
     center: true,
@@ -843,8 +849,12 @@ document.addEventListener('DOMContentLoaded', function() {
     height: 700,
     margin: 0.04,
     controls: true,
+    controlsLayout: 'edges',
     progress: true,
     slideNumber: true,
+    keyboard: true,
+    keyboardCondition: 'focused',
+    touch: true,
     backgroundTransition: 'slide'
   });
 
